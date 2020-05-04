@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * @author Yin Lam Lai
  * @since  3/5/2020
  */
+
 public class Sorts<T extends Comparable<? super T>> {
 
     private static final int HALF_LIST = 2;
@@ -121,7 +122,7 @@ public class Sorts<T extends Comparable<? super T>> {
         int i = (l - 1);
 
         for (int j = l; j < h; j++) {
-            if (arr.get(j).compareTo(pivot) == - 1) {
+            if (arr.get(j).compareTo(pivot) == -1) {
                 i++;
                 T temp = arr.get(i);
                 arr.set(i, arr.get(j));
@@ -174,9 +175,9 @@ public class Sorts<T extends Comparable<? super T>> {
             InsertionSort(list, i, Math.min((i + param - 1), end));
         }
         for (int s = param; s < end; s = s * HALF_LIST) {
-            for (int left = start; left < end+ 1; left += s * HALF_LIST) {
+            for (int left = start; left < end + 1; left += s * HALF_LIST) {
                 int mid = left + s - 1;
-                int right = Math.min((left +  s * HALF_LIST - 1), end);
+                int right = Math.min((left + s * HALF_LIST - 1), end);
                 merge(list, left, mid, right);
             }
         }
