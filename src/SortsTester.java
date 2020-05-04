@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-public class SortsTest {
+public class SortsTester {
     ArrayList<Integer> test1;
     ArrayList<Integer> test2;
     ArrayList<Integer> test3;
@@ -93,4 +93,5 @@ public class SortsTest {
         assertEquals(expected2, test2);
         assertEquals(expected3, test3);
     }
+
 }
