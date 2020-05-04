@@ -24,13 +24,13 @@ public class Sorts<T extends Comparable<? super T>> {
      */
     public void InsertionSort(ArrayList<T> list, int start, int end) {
         for (int i = start + 1; i < end + 1; i++) {
-            T key = list.get(i);
+            T compared = list.get(i);
             int j = i - 1;
-            while (j >= start && list.get(j).compareTo(key) == 1) {
+            while (j >= start && list.get(j).compareTo(compared) == 1) {
                 list.set(j + 1, list.get(j));
                 j = j - 1;
             }
-            list.set(j + 1, key);
+            list.set(j + 1, compared);
         }
     }
 
@@ -146,7 +146,7 @@ public class Sorts<T extends Comparable<? super T>> {
      */
     public void Modified_QuickSort(ArrayList<T> list, int start, int end, int cutoff) {
         while (start < end) {
-            if (end - start + 1 < cutoff) {
+            if (end - start + 1 <= cutoff) {
                 InsertionSort(list, start, end);
                 break;
             } else {
